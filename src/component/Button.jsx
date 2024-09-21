@@ -1,6 +1,14 @@
-function Button({ children }) {
+function Button({ children, isLoading, getAdvice }) {
+  const handleGenAdvice = () => {
+    if (isLoading) return;
+    getAdvice();
+  };
+
   return (
-    <button className="border-[1.3rem] border-primary rounded-[2rem] relative top-[2.5rem]">
+    <button
+      onClick={handleGenAdvice}
+      className="bg-primary w-fit border-[1rem] rounded-[2rem] border-primary aspect-square hover:shadow-shadow relative top-[2rem]"
+    >
       {children}
     </button>
   );
