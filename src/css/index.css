@@ -12,3 +12,9 @@
   font-style: normal;
   font-display: swap;
 }
+
+*::before,
+*,
+*::after {
+  @apply box-border text-[62.5%] p-0 m-0;
+}
